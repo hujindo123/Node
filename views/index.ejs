@@ -93,8 +93,14 @@
         </div>
       </div>
     </div>
+    <div ng-controller="user">
+      <input type="text" ng-model="username">
+      <input type="password" ng-model="password">
+      <button ng-click="register()">注册</button>
+    </div>
   </div>
   </body>
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
-<script src="../javascripts/controller.js"></script>
+  <script src="javascripts/controller.js"></script>
 </html>

@@ -55,6 +55,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-
+app.post("/register.do",routes);
 module.exports = app;

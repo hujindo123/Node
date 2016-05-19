@@ -34,6 +34,7 @@ container.controller('navTop',function ($scope,$rootScope,$http) {
     $rootScope.goodsShow = false;
     $rootScope.goodsHide = false;
     $rootScope.navData = [];
+    $rootScope.navList=[];
     var url="../index/top_nav.json";
     $http.get(url).success( function(data) {
         $rootScope.navData = data.navTop;
@@ -42,7 +43,27 @@ container.controller('navTop',function ($scope,$rootScope,$http) {
         $rootScope.goodsShow = false;
     };
     $scope.overNav = function (t) {
+        console.log(angular.element(document.querySelector('.goods_main ul')[t]))
         $rootScope.goodsShow = true;
     };
+})
+container.controller('user',function ($scope, $http) {
+    $scope.register = function () {
+        $scope.user = {
+            'username': $scope.username,
+            'password': $scope.password
+        }
+        $http({
+            data: JSON.stringify($scope.user),
+            url:  '/register.do',
+            method: 'post',
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+        }).success(function (req,res) {
+           console.log(req[0].password)
+        }).error(function (req,res) {
+            debugger
+        })
+    }
 })
 
