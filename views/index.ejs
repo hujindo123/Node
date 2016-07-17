@@ -4,6 +4,19 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+  <style>
+    .indicatorContainer{
+      display:inline-block;
+      position:relative;
+    }
+    .prgLogo{
+      position:absolute;
+      width:60px;
+      height:60px;
+      margin-top:-30px;
+      margin-left:-30px;
+    }
+  </style>
   <body>
   <div class="container" ng-app="container">
     <div class="top">
@@ -100,8 +113,9 @@
       <button ng-click="register()">注册</button>
       <ul>
           <li ng-repeat="x in list" on-finish-render-filters>
-            <span>{{x}}</span>
-            <div class="prg-cont rad-prg" id="indicatorContainer4">  </div>
+            <div  class="indicatorContainer" style="position: relative">
+              <div style="position: absolute; height: 50px;width: 50px;top: 50%;left: 50%;margin-left: -30px;margin-top: -30px;text-align: center;line-height: 50px;font-size: 30px">A</div>
+            </div>
           </li>
       </ul>
     </div>

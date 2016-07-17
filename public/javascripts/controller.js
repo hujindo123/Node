@@ -68,20 +68,30 @@ container.controller('user', function ($scope, $http) {
             $scope.$watch(function () {
                 $scope.list = req;
             })
+            var datacolor = ['#0bd192', '#4eaef8', '#F84E20','#F817E0','#0bd192',];
             $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
                 //下面是在table render完成后执行的js
-                var radialObj4 = $('#indicatorContainer4').radialIndicator({
-                    barColor: {
-                        0: '#FF0000',
-                        33: '#FFFF00',
-                        66: '#0066FF',
-                        100: '#33CC33'
-                    },
-                    percentage: true
-                }).data('radialIndicator');
+                $('.indicatorContainer').each(function (i, n) {
+                    n = $(n);
+                    n.radialIndicator({
+                        radius: 85,
+                        barBgColor: '#e7e7e7',
+                        barColor: datacolor[i],
+                        fontColor: '#ff9600',
+                        fontSize: '50',
+                        fontFamily: '微软雅黑',
+                        fontWeight: '100',
+                        barWidth: 16,
+                        initValue: 0,
+                        roundCorner: false,
+                        //percentage: false,
+                        displayNumber: false,
+                      
+                    });
+                    var radialObj = n.data('radialIndicator');
+                    radialObj.animate((i+1)*10);
+                });
 
-                //Using Instance
-                radialObj4.animate(70);
             });
 
         }).error(function (req, res) {

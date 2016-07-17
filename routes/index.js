@@ -9,7 +9,7 @@ console.log(req.body.username)
    var myConnection = getMyconnection();
     myConnection.connect();
     myConnection.query("select password from user where username=?",[req.body.username],function(err,data){
-        data = [1,2,3,4,5,6,7,8,9]
+        data = [1,2,3,4,5]
         res.send(data);
         res.end();
         myConnection.end();
