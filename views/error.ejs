@@ -2,15 +2,297 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
     <title>Document</title>
 </head>
+<!-- css 文件 -->
+<link rel="stylesheet" href="http://static.runoob.com/assets/foundation-5.5.3/foundation.min.css">
+
+<!-- jQuery 库 -->
+<script src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- JavaScript 文件 -->
+<script src="http://static.runoob.com/assets/foundation-5.5.3/js/foundation.min.js"></script>
+
+<!-- modernizr 文件 -->
+<script src="http://static.runoob.com/assets/foundation-5.5.3/js/vendor/modernizr.js"></script>
+
+<link rel='stylesheet' href='/stylesheets/music/init.css' />
+<link rel='stylesheet' href='/stylesheets/music/index.css' />
+<link rel='stylesheet' href='/stylesheets/music/swiper.min.css' />
+<script src="/javascripts/music/swiper.min.js"></script>
+<script src="/javascripts/music/idangerous.swiper.min.js"></script>
 <body>
+<header>
+    <section class="row headTo">
+        <section class="small-2 columns void"></section>
+        <section class="small-8 columns search">
+            <input type="search" placeholder="搜索音乐、歌词、电台">
+        </section>
+        <section class="small-2 columns music"></section>
+    </section>
+</header>
+<section class="container">
+    <section class="row">
+        <ul class="tab">
+            <li class="small-3 columns"><a href="javascript:void(0)" class="active">个性推荐</a></li>
+            <li class="small-3 columns"><a href="javascript:void(0)">歌单</a></li>
+            <li class="small-3 columns"><a href="javascript:void(0)">主播电台</a></li>
+            <li class="small-3 columns"><a href="javascript:void(0)">排行榜</a></li>
+        </ul>
+    </section>
+</section>
+<!-- slideTo tab -->
+<div class="swiper-container favor-list">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="banner-container">
+                <div class="swiper-wrapper" >
+                    <div class="swiper-slide">
+                        <div class="title">
+                            <a href=""><img src="/images/1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="title">
+                            <a href=""><img src="/images/2.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="title">
+                            <a href=""><img src="/images/3.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="title">
+                            <a href=""><img src="/images/4.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="title">
+                            <a href=""><img src="/images/5.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination"></div>
+            </div>
+            <section class="row lines_main" >
+                <section class="small-4 columns">
+                    <section class="cocie">
+                        <img src="/images/music/syj.png">
+                    </section>
+                    <p>私人FM</p>
+                </section>
+                <section class="small-4 columns">
+                    <section class="cocie">31</section>
+                    <p>每日歌曲推荐</p>
+                </section>
+                <section class="small-4 columns">
+                    <section class="cocie">
+                        <img src="/images/music/pb.png" >
+                    </section>
+                    <p>云音乐新歌榜</p>
+                </section>
+            </section>
+            <section class="row line_g">
+                <section class="tjgd"><span>推荐歌单</span><label>更多</label></section>
+                <section class="container listdata">
+                    <ul class=" row ">
+                        <li class="small-4 columns">
+                            <a href=""><img src="/images/music/p1.jpg" alt="">
+                                <div class="num"><span></span>51万</div>
+                            </a>
+                            <p>每个姑娘都有一颗少女心</p>
+                        </li>
+                        <li class="small-4 columns">
+                            <a href=""><img src="/images/music/p2.jpg" alt="">
+                                <div class="num "><span></span>51万</div>
+                            </a>
+                            <p>「粤语」简单情歌，深情粤语</p>
+                        </li>
+                        <li class="small-4 columns">
+                            <a href=""><img src="/images/music/p3.jpg" alt="">
+                                <div class="num"><span></span>21万</div>
+                            </a>
+                            <p>【英語】减肥动力之歌</p>
+                        </li>
 
+                    </ul>
+                    <ul class=" row ">
+                        <li class="small-4 columns">
+                            <a href=""><img src="/images/music/p4.jpg" alt="">
+                                <div class="num"><span></span>61万</div>
+                            </a>
+                            <p>街头极限健身 Street Workout BGM</p>
+                        </li>
+                        <li class="small-4 columns">
+
+                            <a href=""><img src="/images/music/p5.jpg" alt="">
+                                <div class="num "><span></span>511万</div>
+                            </a>
+                            <p>日出之前</p>
+                        </li>
+                        <li class="small-4 columns">
+                            <a href=""><img src="/images/music/p6.jpg" alt="">
+                                <div class="num "><span></span>21万</div>
+                            </a>
+                            <p>历届奥运主题歌回顾</p>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </div>
+        <div class="swiper-slide margin19">
+            <a href="">
+                <dl>
+                    <dt>
+                        <img src="images/pic3-favor.png">
+                        <span></span>
+                    </dt>
+                    <dd>
+                        <h2>1G流量免费送</h2>
+                        <p>我们嗨起来自己都害怕我们嗨起来自己都害怕我们嗨起来自己都害怕</p>
+                        <small>活动截止到2016-07-01</small>
+                    </dd>
+                </dl>
+            </a>
+            <a href="">
+                <dl>
+                    <dt>
+                        <img src="images/pic3-favor.png">
+                    </dt>
+                    <dd>
+                        <h2>1G流量免费送</h2>
+                        <p>我们嗨起来自己都害怕</p>
+                        <small>活动截止到2016-07-01</small>
+                    </dd>
+                </dl>
+            </a>
+            <a href="">
+                <dl>
+                    <dt><img src="images/pic3-favor.png"></dt>
+                    <dd>
+                        <h2>1G流量免费送</h2>
+                        <p>我们嗨起来自己都害怕我们嗨起来自己都害怕我们嗨起来自己都害怕</p>
+                        <small>活动截止到2016-07-01</small>
+                    </dd>
+                </dl>
+            </a>
+            <a href="">
+                <dl>
+                    <dt><img src="images/pic3-favor.png"></dt>
+                    <dd>
+                        <h2>1G流量免费送</h2>
+                        <p>我们嗨起来自己都害怕</p>
+                        <small>活动截止到2016-07-01</small>
+                    </dd>
+                </dl>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <div class="nofavor">
+                <img src="images/panda.png">
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <a href="">
+                <dl>
+                    <dt>
+                        <img src="images/pic1-favor.png">
+                        <span></span>
+                    </dt>
+                    <dd>
+                        <h2>1G流量免费送</h2>
+                        <p>我们嗨起来自己都害怕我们嗨起来自己都害怕我们嗨起来自己都害怕</p>
+                        <small>活动截止到2016-07-01</small>
+                    </dd>
+                </dl>
+            </a>
+            <a href="">
+                <dl>
+                    <dt>
+                        <img src="images/pic1-favor.png">
+                    </dt>
+                    <dd>
+                        <h2>1G流量免费送</h2>
+                        <p>我们嗨起来自己都害怕</p>
+                        <small>活动截止到2016-07-01</small>
+                    </dd>
+                </dl>
+            </a>
+            <a href="">
+                <dl>
+                    <dt><img src="images/pic3-favor.png"></dt>
+                    <dd>
+                        <h2>1G流量免费送</h2>
+                        <p>我们嗨起来自己都害怕我们嗨起来自己都害怕我们嗨起来自己都害怕</p>
+                        <small>活动截止到2016-07-01</small>
+                    </dd>
+                </dl>
+            </a>
+            <a href="">
+                <dl>
+                    <dt><img src="images/pic1-favor.png"></dt>
+                    <dd>
+                        <h2>1G流量免费送</h2>
+                        <p>我们嗨起来自己都害怕</p>
+                        <small>活动截止到2016-07-01</small>
+                    </dd>
+                </dl>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<section class="footer">
+    <ul class="row">
+        <li class="small-3 columns">
+            <img src="/images/music/mm.png" alt="">
+            发现推荐
+        </li>
+        <li class="small-3 columns">
+            <img src="/images/music/fm.png" alt="">
+            我的音乐
+        </li>
+        <li class="small-3 columns">
+            <img src="/images/music/f.png" alt="">
+            朋友
+        </li>
+        <li class="small-3 columns">
+            <img src="/images/music/u.png" alt="">
+            账号
+        </li>
+    </ul>
+</section>
 </body>
-<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script>
-    (function ($) {
 
-    })(jQuery)
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        autoHeight: true,
+        onSlideChangeStart: function(){
+            $(".tab .default").removeClass('default');
+            $(".tab li").eq(mySwiper.activeIndex).addClass('default');
+        }
+    });
+    $(".tab li").on('click',function(e){
+        e.preventDefault();
+        $(".tab .default").removeClass('default');
+        $(this).addClass('default');
+        mySwiper.swipeTo($(this).index());
+    });
+    $(".tab li").click(function(e){
+        e.preventDefault();
+    });
+
+
+   var mySwiper = new Swiper('.banner-container',{
+       pagination: '.pagination',
+       paginationClickable: true,
+       loop:true,
+   })
+
+
+
+
 </script>
 </html>
