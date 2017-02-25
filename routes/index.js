@@ -2,7 +2,7 @@ var express = require('express');
 var mysql = require("mysql");
 var router = express.Router();
 router.get('/', function(req, res, next) {
-  res.render('index', { title: '首页' });
+  res.render('index', {title: '首页' });
 });
 router.post('/register.do',function (req,res) {
 console.log(req.body.username)

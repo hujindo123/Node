@@ -57,5 +57,28 @@ container.controller('user', function ($scope, $http) {
             debugger
         })
     }
-})
+});
+
+angular.module('main', []).controller('mainCtrl', ["$scope", "$http", function ($scope, $http) {
+    $scope.searchSong = function () {
+        var data = {
+            songName: $scope.songName
+        };
+        $scope.goSearch = true;
+        $http({
+            data: data,
+            url: '/main/search.do',
+            method: 'post',
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8"
+        }).success(function (req, res) {
+            debugger
+            $scope.songList = req.result.songs;
+        }).error(function (req, res) {
+            debugger
+        })
+
+
+    }
+}]);
 
