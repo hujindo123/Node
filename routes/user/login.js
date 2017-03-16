@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var userMessage = require('../../modules/userMessage');
+
 /*var gulp = require('gulp');
 var spritesmith = require('gulp.spritesmith');
 
@@ -14,10 +16,10 @@ gulp.task('sprite', function () {
 router.get('/', function(req, res, next) {
     res.render('user/login',{title:'登录'});
 });
-router.post('/user/login', function(req, res, next) {
-  console.log(111)
-});
 
+router.post('/add',function (req, res, next) {
+    userMessage.addMessage(req, res, next);
+});
 
 
 
