@@ -8,7 +8,15 @@ var router = express.Router();
 var searchSong = require("../modules/searchSong");
 
 router.get('/', function (req, res, next) {
-    res.render('main');
+    if(req.session.user){
+        console.log('登录成功');
+        console.log(req.session.user);
+        res.render('main');
+    }else {
+        console.log('还未登录');
+        res.redirect('/login');
+    }
+
 });
 
 router.post('/search', function (req, res, next) {

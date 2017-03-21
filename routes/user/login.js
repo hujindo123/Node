@@ -20,6 +20,9 @@ router.get('/', function(req, res, next) {
 router.post('/add',function (req, res, next) {
     userMessage.addMessage(req, res, next);
 });
+router.post('/getPic',function (req, res, next) {
+    userMessage.getPic(req, res, next);
+});
 
 
 

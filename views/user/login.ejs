@@ -10,8 +10,8 @@
 </head>
 <!-- jQuery 库 -->
 <body>
-<div class="container">
-    <form action="/add" method="post" enctype="multipart/form-data">
+<div class="container" ng-app="login">
+    <form action="/add" method="post" enctype="multipart/form-data"  ng-controller="login">
         <div class="form-group">
             <label for="title">用户名</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="请输入用户名">
@@ -30,12 +30,31 @@
             <input type="file" id="poster" name="img" accept="image/*">
 
         </div>
+        <img ng-click="getPic()" ng-src='data:image/png;base64,{{img}}'  style="width: 50px;height: 30px;display: block;">
         <button type="submit" class="btn btn-success">提交</button>
     </form>
 </div>
 
 </body>
 <script>
+    var login = angular.module('login', []);
+    login.controller('login', function ($scope, $http, $sce, $window) {
+        $scope.getPic = function(){
+            $http({
+                method: "POST",
+                url: "/getPic",
+            }).
+            success(function(data, status) {
+               /* $scope.$apply(function () {
+                    $scope.img = data
+                })*/
+                $scope.img = data
+            }).
+            error(function(data, status) {
+                debugger
+            })
+        };
 
+    });
 </script>
 </html>
