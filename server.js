@@ -12,6 +12,12 @@ var main = require('./routes/main');
 var login = require('./routes/user/login');
 var account = require('./routes/user/account');
 
+var angular = require('./routes/angular-ui-router/main');
+var PageTab = require('./routes/angular-ui-router/PageTab');
+var Page1 = require('./routes/angular-ui-router/Page1');
+var Page2 = require('./routes/angular-ui-router/Page2');
+var Page3 = require('./routes/angular-ui-router/Page3');
+
 
 var app = express();
 // view engine setup
@@ -42,9 +48,11 @@ app.use('/play', play);
 app.use('/account', account);
 app.use('/login', login);
 
-
-
-
+app.use('/angular', angular);
+app.use('/PageTab', PageTab);
+app.use('/Page1', Page1);
+app.use('/Page2', Page2);
+app.use('/Page3', Page3);
 
 app.post('/add', login);
 app.post('/getPic', login);
