@@ -1,20 +1,3 @@
-
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color: #ccc;
-}
-
-input:-moz-placeholder, textarea:-moz-placeholder {
-    color: #ccc;
-}
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-    color: #ccc;
-}
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-    color: #ccc;
-}
-
 html, body {
     font-size: 16px;
     min-height: 100%;
@@ -23,31 +6,38 @@ html, body {
 
 header {
     background: #ff7ea0;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+}
+.content{
+    position: relative;
+    margin-top: 50px;
+    padding-bottom: 30px;
 }
 
 header .headTo {
-    display: flex;
+   /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     padding: 10px 0;
 }
-
-.headTo .void {
-    display: inline-block;
-    height: 28px;
-    background: url("../../images/music/voidw.png") center center no-repeat;
+.headTo .isearchs {
+    height: 30px;
+    border-radius: 25px;
+    padding: 0;
+    float: right;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}
+.headTo .del{
+    background: url("../../images/music/icon/musict.png") center center no-repeat;
     background-size: contain;
 }
-
-.headTo .search {
-    background: url("../../images/music/search.png") 0.8em center no-repeat #fff;
-    background-size: 1.3rem;
-    height: 30px;
-    border-radius: 5px;
-    padding-left: 2em;
-    padding-right: 0.5em;
-}
-
 .headTo input {
     vertical-align: middle;
     box-shadow: inset 0 0 1px #fff;
@@ -55,13 +45,25 @@ header .headTo {
     height: 30px;
     outline: none;
     background: transparent;
+    border-radius: 25px;
 }
-
+.searchs input{
+    width: 100%;
+}
 .headTo .music {
     display: block;
     height: 28px;
-    background: url("../../images/music/music.png") center center no-repeat;
+    background: url("../../images/music/icon/music.png") center center no-repeat;
     background-size: contain;
+}
+.headTo .searchs {
+    float: right;
+    height: 30px;
+    border-radius: 25px;
+    padding-left: 25px;
+    padding-right: 0.5em;
+    background: url("../../images/music/icon/searchs.png") 10px center no-repeat #fff;
+    background-size: 15px;
 }
 
 .tab {
@@ -75,7 +77,7 @@ header .headTo {
     float: left;
     font-size: 16px;
     text-align: center;
-    padding: 0
+    padding: 0;
 }
 
 .tab li a {
@@ -87,6 +89,27 @@ header .headTo {
 .tab .active {
     border-bottom: 2px solid #ff7ea0
 }
+
+
+
+
+
+
+
+.tablist li{
+    height: 60px;
+    padding: 5px 30px;
+    text-align: left;
+    border-bottom: 1px solid #eaeff1;
+    line-height: 15px;
+}
+.tablist li a{
+    display: block;
+}
+.tablist li span{
+    font-size: 12px;
+}
+
 
 .pagination {
     position: absolute;

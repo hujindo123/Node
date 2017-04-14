@@ -1,0 +1,133 @@
+<header ng-controller="song">
+    <section class="row headTo">
+        <!-- <span ng-if="!music">
+              <section class="small-2 columns isearchs del"></section>
+         </span>-->
+        <section class="small-2 columns isearchs del" ng-click="cancelSearch()"></section>
+        <section class="columns searchs small-8 toggle">
+            <input type="search" placeholder="搜索音乐、歌词、电台" ng-model="searchName" ui-sref="getSearch">
+        </section>
+        <section class="small-2 columns music" ng-hide="music"></section>
+    </section>
+</header>
+<section class="content">
+    <section class="container">
+        <section class="row">
+            <ul class="tab">
+                <li class="small-3 columns active"><a href="javascript:void(0)">歌曲</a></li>
+                <li class="small-3 columns"><a href="javascript:void(0)">歌手</a></li>
+                <li class="small-3 columns"><a href="javascript:void(0)">MV</a></li>
+                <li class="small-3 columns"><a href="javascript:void(0)">主播电台</a></li>
+            </ul>
+        </section>
+    </section>
+    <!-- slideTo tab -->
+    <div class="swiper-container favor-list">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="banner-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="title">
+                                <a href=""><img src="/images/music/1.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="title">
+                                <a href=""><img src="/images/music/2.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="title">
+                                <a href=""><img src="/images/music/3.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="title">
+                                <a href=""><img src="/images/music/4.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="title">
+                                <a href=""><img src="/images/music/5.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination"></div>
+                </div>
+                <section class="row lines_main">
+                    <section class="small-4 columns">
+                        <section class="cocie">
+                            <img src="/images/music/syj.png">
+                        </section>
+                        <p>私人FM</p>
+                    </section>
+                    <section class="small-4 columns">
+                        <section class="cocie">31</section>
+                        <p>每日歌曲推荐</p>
+                    </section>
+                    <section class="small-4 columns">
+                        <section class="cocie">
+                            <img src="/images/music/pb.png">
+                        </section>
+                        <p>云音乐新歌榜</p>
+                    </section>
+                </section>
+                <section class="row line_g">
+                    <section class="tjgd"><span>推荐歌单</span><label>更多</label></section>
+                    <section class="container listdata">
+                        <ul class=" row ">
+                            <li class="small-4 columns">
+                                <a href=""><img src="/images/music/p1.jpg" alt="">
+                                    <div class="num"><span></span>51万</div>
+                                </a>
+                                <p>每个姑娘都有一颗少女心</p>
+                            </li>
+                            <li class="small-4 columns">
+                                <a href=""><img src="/images/music/p2.jpg" alt="">
+                                    <div class="num "><span></span>51万</div>
+                                </a>
+                                <p>「粤语」简单情歌，深情粤语</p>
+                            </li>
+                            <li class="small-4 columns">
+                                <a href=""><img src="/images/music/p3.jpg" alt="">
+                                    <div class="num"><span></span>21万</div>
+                                </a>
+                                <p>【英語】减肥动力之歌</p>
+                            </li>
+
+                        </ul>
+                        <ul class=" row ">
+                            <li class="small-4 columns">
+                                <a href=""><img src="/images/music/p4.jpg" alt="">
+                                    <div class="num"><span></span>61万</div>
+                                </a>
+                                <p>街头极限健身 Street Workout BGM</p>
+                            </li>
+                            <li class="small-4 columns">
+
+                                <a href=""><img src="/images/music/p5.jpg" alt="">
+                                    <div class="num "><span></span>511万</div>
+                                </a>
+                                <p>日出之前</p>
+                            </li>
+                            <li class="small-4 columns">
+                                <a href=""><img src="/images/music/p6.jpg" alt="">
+                                    <div class="num "><span></span>21万</div>
+                                </a>
+                                <p>历届奥运主题歌回顾</p>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var mySwiper = new Swiper('.banner-container', {
+        pagination: '.pagination',
+        paginationClickable: true,
+        loop: true,
+    })
+</script>

@@ -1,0 +1,109 @@
+<style>
+    .songTop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .songTop .songType {
+        height: 25px;
+        width: 110px;
+        padding: 0 15px;
+        text-align: right;
+        background-image: url("/images/music/icon/song.png"), url("/images/music/icon/more.png");
+        background-repeat: no-repeat, no-repeat;
+        background-position: left center, right center;
+        background-size: contain, 13px 13px;
+    }
+
+    .hotSearch {
+        padding: 10px;
+    }
+
+    .hotSearch .hotSearchTitle {
+        font-size: 12px;
+        color: #aaa;
+    }
+
+    .hotSearch .hotList {
+        font-size: 13px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .hotSearch .hotList li {
+        margin-left: 10px;
+        border-radius: 20px;
+        padding: 3px 15px;
+        border: 1px solid #ccc;
+        margin-top: 8px;
+    }
+
+    .localStorageList {
+        padding-left: 10px;
+    }
+
+    .localStorageList li {
+        height: 45px;
+        background: url("/images/music/icon/time.png") left 14px no-repeat;
+        background-size: 20px 20px;
+        padding-left: 28px;
+        line-height: 45px;
+        font-size: 16px;
+        border-bottom: 1px solid #ccc;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .localStorageList li span {
+        background: url("/images/music/icon/del.png") center center no-repeat;
+        background-size: 12px 12px;
+        height: 45px;
+        width: 30px;
+        padding: 0 20px;
+        align-self: flex-end;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        z-index: 1000;
+    }
+    .show{
+        display: block;
+    }
+    .hide{
+        display: none;
+    }
+    .searchChange, .localStorage{
+        padding-bottom: 30px;
+    }
+</style>
+<section class="localStorage"   ng-class="{true: 'show', false: 'hide' }[show]">
+    <section class="small-12 songTop">
+        <section class="songType">歌手分类</section>
+    </section>
+    <section class="small-12 hotSearch">
+        <section class="hotSearchTitle">热门搜索</section>
+        <ul class="hotList">
+            <li ng-repeat="x in hostSearch" ng-bind="x.name" ng-click="searchSongId(x.name)">
+            </li>
+        </ul>
+    </section>
+    <ul class="small-12 localStorageList">
+        <li  ng-repeat=" x in list"  ng-click="searchSongUrl(x.id)" >{{x.name}}<span ng-click="removeList($index)"></span></li>
+    </ul>
+</section>
+<section class="container searchChange"  ng-class="{false: 'show', true: 'hide' }[show]">
+    <section class="row">
+        <ul class="tab tablist" ng-repeat=" x in songs">
+            <li class="small-12 columns" ng-click="searchSongUrl(x.id)">
+                <nobr><a href="javascript:void(0)">{{x.name}}</a></nobr>
+                <span>{{x.artists[0].name}}</span>
+            </li>
+        </ul>
+    </section>
+</section>
