@@ -1,0 +1,13 @@
+<section class="content">
+    <!-- list -->
+    <section class="container" ng-class="{show: playShow}">
+        <section class="row">
+            <ul class="tab tablist" ng-repeat=" x in songs">
+              <li class="small-12 columns">
+                  <nobr><a ui-sref="playPage({id:x.id,name:x.name})">{{x.name}}</a></nobr>
+                    <span>{{x.artists[0].name}}</span>
+                </li>
+            </ul>
+        </section>
+    </section>
+</section>

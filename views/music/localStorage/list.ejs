@@ -36,7 +36,7 @@
         flex-wrap: wrap;
     }
 
-    .hotSearch .hotList li {
+    .hotSearch .hotList a {
         margin-left: 10px;
         border-radius: 20px;
         padding: 3px 15px;
@@ -48,7 +48,12 @@
         padding-left: 10px;
     }
 
-    .localStorageList li {
+    .localStorageList a, .hotList a {
+        display: block;
+        color: #666;
+    }
+
+    .localStorageList .a {
         height: 45px;
         background: url("/images/music/icon/time.png") left 14px no-repeat;
         background-size: 20px 20px;
@@ -60,7 +65,7 @@
         overflow: hidden;
     }
 
-    .localStorageList li span {
+    .localStorageList .a span {
         background: url("/images/music/icon/del.png") center center no-repeat;
         background-size: 12px 12px;
         height: 45px;
@@ -71,37 +76,54 @@
         position: absolute;
         right: 0;
         z-index: 1000;
+        top: 0;
     }
-    .show{
-        display: block;
+
+    .show {
+        display: block !important;
     }
-    .hide{
+
+    .hide {
+        display: none !important;
+    }
+
+    .searchChange, .localStorage {
+        padding-bottom: 30px;
         display: none;
     }
-    .searchChange, .localStorage{
-        padding-bottom: 30px;
-    }
 </style>
-<section class="localStorage"   ng-class="{true: 'show', false: 'hide' }[show]">
+<header>
+    <section class="row headTo">
+        <section class="small-2 columns isearchs" ui-sref="musicMain">取消</section>
+        <section class="columns searchs small-9 small-ffset-1">
+            <input type="search" placeholder="搜索音乐、歌词、电台" autofocus ng-model="searchName"
+                   ng-change="searchSongId(searchName)">
+        </section>
+    </section>
+</header>
+<section class="localStorage" ng-class="{true: 'show', false: 'hide' }[show]">
     <section class="small-12 songTop">
         <section class="songType">歌手分类</section>
     </section>
     <section class="small-12 hotSearch">
         <section class="hotSearchTitle">热门搜索</section>
-        <ul class="hotList">
-            <li ng-repeat="x in hostSearch" ng-bind="x.name" ng-click="searchSongId(x.name)">
-            </li>
-        </ul>
+        <section class="hotList">
+            <a ng-repeat="x in hostSearch" ng-bind="x.songName" ng-click="searchSongId(x.songName)">
+            </a>
+        </section>
     </section>
-    <ul class="small-12 localStorageList">
-        <li  ng-repeat=" x in list"  ng-click="searchSongUrl(x.id)" >{{x.name}}<span ng-click="removeList($index)"></span></li>
-    </ul>
+    <section class="small-12 localStorageList">
+        <section class="a" ng-repeat=" x in list" ng-if="x.name.length > 0 || x.name!=''">
+            <a ng-click="searchSongId(x.name)">{{x.name}}</a>
+            <span ng-click="removeList($index)"></span>
+        </section>
+    </section>
 </section>
-<section class="container searchChange"  ng-class="{false: 'show', true: 'hide' }[show]">
+<section class="container searchChange" ng-class="{false: 'show', true: 'hide' }[show]">
     <section class="row">
         <ul class="tab tablist" ng-repeat=" x in songs">
-            <li class="small-12 columns" ng-click="searchSongUrl(x.id)">
-                <nobr><a href="javascript:void(0)">{{x.name}}</a></nobr>
+            <li class="small-12 columns">
+                <nobr><a ui-sref="playPage({id:x.id,name:x.name,searchName: searchName})">{{x.name}}</a></nobr>
                 <span>{{x.artists[0].name}}</span>
             </li>
         </ul>

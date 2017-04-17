@@ -303,6 +303,7 @@ header .headTo {
     background-size: contain;
     height: 35px;
     margin-top: 8px;
+    display: block;
 }
 
 .playTop .share {

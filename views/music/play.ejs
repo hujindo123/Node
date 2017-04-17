@@ -1,0 +1,158 @@
+<style>
+    html, body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+
+    }
+
+    .filter {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(10px); /* Chrome, Opera */
+        -moz-filter: blur(10px);
+        -ms-filter: blur(10px);
+        filter: blur(10px);
+        z-index: 1000;
+    }
+
+    .tm {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    .play {
+        position: absolute;
+        z-index: 3000;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+
+    }
+
+</style>
+<section class="container">
+    <div class="filter" ng-style="songBacks"></div>
+    <div class="tm"></div>
+    <div class="play">
+        <section class="row playTop">
+            <section class="small-2 columns">
+                <a class="back" ui-sref="getSearch.list({searchName:searchName})"></a>
+            </section>
+            <section class="small-8 columns play_title">
+                <p ng-bind="songName"></p>
+                <label ng-bind="artistsName"></label>
+            </section>
+            <section class="small-2 columns">
+                <section class="share"></section>
+            </section>
+        </section>
+        <section class="row rotate">
+            <section class="mlist">
+                <section class="rotate_tx" ng-class="{true:'rotate_tx_true',false:'rotate_tx_false'}[off]">
+                    <img ng-src="{{songBack}}">
+                </section>
+            </section>
+        </section>
+        <audio ng-src="{{songUrl}}" ng-click="playMusic()"></audio>
+        <section class="m_bottom">
+            <section class="row rang">
+                <section class="small-2 columns" ng-bind="runDuration">00:00</section>
+                <section class="small-8 columns" style="position: relative;overflow: hidden">
+                    <input type="range" class="n_r" min="0" max="100" ng-change="rangeChange(runWidth)" ng-model="runWidth">
+                </section>
+                <section class="small-2 columns" ng-bind="duration"></section>
+            </section>
+            <section class="row u_down">
+                <section class="small-3 columns">
+                    <section class="m_for"></section>
+                </section>
+                <section class="small-3 columns">
+                    <section class="up"></section>
+                </section>
+                <section class="small-3 columns">
+                    <section class="m_play" ng-class="{false:'m_play_play',true:'m_play_pause'}[off]"ng-click="offButon()"></section>
+                </section>
+                <section class="small-3 columns">
+                    <section class="down" ng-click="nextSongs()"></section>
+                </section>
+                <section class="small-3 columns">
+                    <section class="m_list"></section>
+                </section>
+            </section>
+        </section>
+    </div>
+
+</section>
+<script>
+
+</script>
+<!--<script>
+    song.controller('play', function ($scope, $http, $sce, $location, $interval) {
+        debugger
+        $scope.answer = JSON.parse(localStorage.getItem("songsMessage"));
+
+        $scope.artistsName = $scope.answer.artists[0].name; //歌手名称
+        $scope.songBack = $scope.answer.album.blurPicUrl; //默认背景*/
+        $scope.songName = $scope.answer.name; //歌曲名称*/
+        $scope.off = false; //默认未播放
+        $scope.songUrl = $sce.trustAsResourceUrl($scope.answer.mp3Url);
+        $scope.runDuration = '00:00';
+        $scope.runWidth = 0;
+        $scope.duration = new Date($scope.answer.duration).Format("mm:ss");
+        /* 454000*/
+        $scope.songBacks = {
+            "background-image": 'url(' + $scope.songBack + ')',
+        }
+        var audio = new Audio($scope.songUrl);
+        $scope.runTime = 0;
+        /* 拉动快进 */
+        $scope.rangeChange = function (runWidth) {
+            $scope.runTime = $scope.answer.duration * (runWidth /100) ;
+            audio.currentTime = ($scope.runTime/1000).toFixed(0);
+        };
+        /* 播放开关 */
+        $scope.offButon = function () {
+            $scope.off ? $scope.off = false:$scope.off = true;
+            if($scope.off){
+                audio.play();
+                $scope.timer = setInterval(function () {
+                    $scope.runTime >= $scope.answer.duration?clearInterval($scope.timer) :$scope.runTime += 1000;
+                    $scope.runDuration = $scope.runTime;
+                    $scope.$apply(function () {
+                        $scope.runDuration = new Date($scope.runDuration).Format("mm:ss");
+                    });
+                    var range = (($scope.runTime / $scope.answer.duration) * 100).toFixed(0);
+                    $scope.runWidth = range;
+                    $scope.runValueTime = ($scope.runTime / $scope.answer.duration) * 100;
+                }, 1000);
+            }else {
+                clearInterval($scope.timer);
+                audio.pause();
+            }
+        };
+        /* 下一首 */
+        $scope.nextSongs = function () {
+
+        };
+
+        $scope.playShow = true;
+    })
+
+</script>-->

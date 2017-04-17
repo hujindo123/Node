@@ -1,0 +1,17 @@
+.header {
+  width: 10rem;
+  height: 4.666667rem;
+  background: #3d61ff;
+}
+
+[data-dpr="1"] .div {
+  font-size: 0.186667rem;
+}
+
+[data-dpr="2"] div {
+  font-size: 0.32rem;
+}
+
+[data-dpr="3"] div {
+  font-size: 0.48rem;
+}
